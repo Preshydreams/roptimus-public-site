@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Explore the ROPTIMUS Telegram platform, its account dashboard, investment levels, trading area, tasks and team features.">
+  <meta property="og:title" content="ROPTIMUS | Your Platform. One Dashboard.">
+  <meta property="og:description" content="Explore the ROPTIMUS platform and get started through Telegram.">
+  <meta property="og:type" content="website">
+  <title>ROPTIMUS | Your Platform. One Dashboard.</title>
+  <style>
+    :root {
+      --bg:#0b1220; --panel:#121d2e; --panel2:#172438; --gold:#f6c945;
+      --gold2:#ffdf75; --text:#f7f8fb; --muted:#aab5c7; --line:rgba(255,255,255,.10);
+      --blue:#8db7ff; --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+    a{color:inherit}
+    .wrap{width:min(92%,var(--max));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:1.35rem;font-weight:950;letter-spacing:.14em;color:var(--gold);text-decoration:none}
+    .navlinks{display:flex;align-items:center;gap:24px}
+    .navlinks a{text-decoration:none;color:#c7d0df;font-size:.92rem}
+    .navlinks a:hover{color:var(--gold)}
+    .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:9px;color:white;padding:8px 12px;font-size:1.2rem}
+    .hero{position:relative;overflow:hidden;padding:100px 0 88px;background:radial-gradient(ellipse at 75% 10%,rgba(246,201,69,.16),transparent 38%),radial-gradient(ellipse at 15% 65%,rgba(53,112,190,.18),transparent 42%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+    .eyebrow{display:inline-flex;border:1px solid rgba(246,201,69,.35);background:rgba(246,201,69,.08);color:var(--gold2);border-radius:99px;padding:7px 14px;font-size:.78rem;letter-spacing:.12em;font-weight:800}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.04;letter-spacing:-.045em;margin:22px 0}
+    .gold{color:var(--gold)}
+    .lead{max-width:650px;color:#c1cada;font-size:1.12rem}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 21px;border-radius:10px;text-decoration:none;font-weight:850;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,#ffe17b,#e9ae19);color:#17130a;box-shadow:0 10px 28px rgba(246,201,69,.15)}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04)}
+    .btn-outline{border-color:rgba(255,255,255,.23);color:white;background:rgba(255,255,255,.03)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .hero-card{border:1px solid rgba(246,201,69,.3);border-radius:22px;padding:27px;background:linear-gradient(145deg,rgba(246,201,69,.12),rgba(18,29,46,.95) 55%);box-shadow:0 24px 70px rgba(0,0,0,.24)}
+    .card-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem}
+    .status{color:#8fe0b0;font-weight:800}
+    .balance{font-size:2.8rem;font-weight:900;color:var(--gold);margin:10px 0 2px}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:23px}
+    .mini{background:rgba(5,10,20,.45);border:1px solid var(--line);padding:15px;border-radius:13px}
+    .mini b{display:block;font-size:1.15rem;color:white}
+    .mini span{font-size:.82rem;color:var(--muted)}
+    section{padding:82px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+    .section-head .kicker{color:var(--gold);font-size:.78rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-.03em;margin:10px 0 13px}
+    .section-head p,.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:17px;padding:25px}
+    .icon{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;background:rgba(246,201,69,.12);font-size:1.35rem;margin-bottom:16px}
+    .feature h3{margin:0 0 8px;font-size:1.13rem}
+    .feature p{margin:0;color:var(--muted);font-size:.94rem}
+    .soft{background:#0e1929;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .steps{display:grid;gap:14px}
+    .step{display:flex;gap:15px;background:var(--panel);border:1px solid var(--line);padding:17px;border-radius:14px}
+    .num{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#17130a;font-weight:950}
+    .step p{margin:3px 0 0;color:var(--muted);font-size:.92rem}
+    .vip-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+    table{width:100%;border-collapse:collapse;min-width:420px}
+    th,td{padding:15px 20px;text-align:left;border-bottom:1px solid var(--line)}
+    th{color:var(--gold);background:rgba(246,201,69,.07);font-size:.84rem;text-transform:uppercase;letter-spacing:.08em}
+    td:last-child{font-weight:850;color:var(--gold2)}
+    tr:last-child td{border-bottom:0}
+    .note{font-size:.88rem;color:var(--muted);margin-top:15px}
+    .faq{max-width:850px;margin:auto;display:grid;gap:12px}
+    details{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px 20px}
+    summary{cursor:pointer;font-weight:800}
+    details p{color:var(--muted);margin:12px 0 0}
+    .cta{padding:65px 25px;text-align:center;border:1px solid rgba(246,201,69,.25);border-radius:22px;background:radial-gradient(ellipse at 50% 0,rgba(246,201,69,.16),transparent 65%),var(--panel)}
+    .cta p{color:var(--muted);max-width:650px;margin:0 auto 25px}
+    footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{color:#d3d9e4;text-decoration:none}
+    .disclaimer{font-size:.78rem;color:#8793a6;max-width:900px;margin-top:20px}
+    @media(max-width:850px){.hero-grid,.two-col{grid-template-columns:1fr}.hero{padding:75px 0}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){
+      nav{min-height:66px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:#101a2a;padding:18px 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+      .navlinks.open{display:flex}.grid{grid-template-columns:1fr}.hero-card{padding:20px}.balance{font-size:2.35rem}section{padding:65px 0}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#home">ROPTIMUS</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a><a href="#features">Platform</a><a href="#vip">VIP Levels</a><a href="#getting-started">Get Started</a><a href="#faq">FAQ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">THE ROPTIMUS PLATFORM</span>
+        <h1>Your platform.<br><span class="gold">One dashboard.</span></h1>
+        <p class="lead">Explore the ROPTIMUS Telegram platform, with account tools and dedicated areas for investments, trading, tasks, team activity and profile management.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://t.me/RoptimusSSLBot" target="_blank" rel="noopener">Open ROPTIMUS Bot ↗</a>
+          <a class="btn btn-outline" href="https://t.me/+3pRtVRtD4m5lMDdk" target="_blank" rel="noopener">Join Community</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Platform dashboard features">
+        <div class="card-top"><span>ACCOUNT DASHBOARD</span><span class="status">● PLATFORM OVERVIEW</span></div>
+        <div class="balance">Your account</div>
+        <div class="muted">A central view of the tools available inside ROPTIMUS.</div>
+        <div class="mini-grid">
+          <div class="mini"><b>Deposit</b><span>Account funding area</span></div>
+          <div class="mini"><b>Withdraw</b><span>Withdrawal area</span></div>
+          <div class="mini"><b>Trading</b><span>Trading section</span></div>
+          <div class="mini"><b>Team</b><span>Team section</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap two-col">
+      <div>
+        <span class="eyebrow">ABOUT ROPTIMUS</span>
+        <h2>A connected experience, accessed through Telegram.</h2>
+      </div>
+      <div>
+        <p class="muted">ROPTIMUS brings several account and platform areas together in a Telegram mini-app. The dashboard shown in the app includes account balance information, deposits and withdrawals, financial overview, transaction history, tasks, investment, trading, team and profile sections.</p>
+        <p class="muted">Use the official bot to view the current platform interface, available options and applicable terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="features">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Platform features</span><h2>Explore the tools in one place</h2><p>The following sections are visible in the ROPTIMUS dashboard. Available options and conditions are shown inside the platform.</p></div>
+      <div class="grid">
+        <article class="feature"><div class="icon">▣</div><h3>Account dashboard</h3><p>View your available balance and financial overview from the home dashboard.</p></article>
+        <article class="feature"><div class="icon">＋</div><h3>Deposits</h3><p>Access the deposit area and review the funding instructions displayed in your account.</p></article>
+        <article class="feature"><div class="icon">↗</div><h3>Withdrawals</h3><p>Open the withdrawal area and review the requirements and processing information provided by the platform.</p></article>
+        <article class="feature"><div class="icon">◈</div><h3>Investment</h3><p>Explore the investment section and the VIP levels displayed in the app.</p></article>
+        <article class="feature"><div class="icon">▥</div><h3>Trading</h3><p>Visit the trading section and review its current tools and account information.</p></article>
+        <article class="feature"><div class="icon">▤</div><h3>Transactions</h3><p>Access the transaction history area to review account activity.</p></article>
+        <article class="feature"><div class="icon">🎁</div><h3>Tasks</h3><p>View the tasks and activities made available to your account.</p></article>
+        <article class="feature"><div class="icon">♧</div><h3>Team</h3><p>Access the team area and review the referral or team information shown in the app.</p></article>
+        <article class="feature"><div class="icon">☺</div><h3>Profile</h3><p>Open your profile area for the account options available to you.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="vip">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">VIP levels</span><h2>ROPTIMUS VIP categories</h2><p>These are the level labels and amounts displayed in the investment selection screen.</p></div>
+      <div class="vip-wrap">
+        <table>
+          <thead><tr><th>Level</th><th>Displayed amount (USD)</th></tr></thead>
+          <tbody>
+            <tr><td>VIP 0</td><td>$10</td></tr><tr><td>VIP 1</td><td>$20</td></tr>
+            <tr><td>VIP 2</td><td>$50</td></tr><tr><td>VIP 3</td><td>$100</td></tr>
+            <tr><td>VIP 4</td><td>$350</td></tr><tr><td>VIP 5</td><td>$500</td></tr>
+            <tr><td>VIP 6</td><td>$1,000</td></tr><tr><td>VIP 7</td><td>$3,500</td></tr>
+            <tr><td>VIP 8</td><td>$5,000</td></tr><tr><td>VIP 9</td><td>$10,000</td></tr>
+            <tr><td>VIP 10</td><td>$20,000</td></tr><tr><td>V-VIP</td><td>$50,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Amounts are reproduced from the VIP selection screen. They are not a statement of guaranteed returns, earnings, plan duration, eligibility or benefits. Check the current in-app terms before making any financial decision.</p>
+    </div>
+  </section>
+
+  <section class="soft" id="getting-started">
+    <div class="wrap two-col">
+      <div><span class="kicker">Getting started</span><h2>Access ROPTIMUS through its official Telegram bot.</h2><p class="muted">The mini-app is accessed through Telegram. Review the available sections and platform terms within the app before using any account or financial feature.</p><div class="actions"><a class="btn btn-primary" href="https://t.me/RoptimusSSLBot" target="_blank" rel="noopener">Open the Bot ↗</a></div></div>
+      <div class="steps">
+        <div class="step"><span class="num">1</span><div><b>Open Telegram</b><p>Use the official ROPTIMUS bot link to access the platform.</p></div></div>
+        <div class="step"><span class="num">2</span><div><b>Explore your dashboard</b><p>Review the account overview and the available platform sections.</p></div></div>
+        <div class="step"><span class="num">3</span><div><b>Read the current terms</b><p>Check eligibility, fees, risks, limits and conditions in the app before taking action.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Questions</span><h2>Frequently asked questions</h2></div>
+      <div class="faq">
+        <details><summary>How do I access ROPTIMUS?</summary><p>Open the official Telegram bot using the button on this website.</p></details>
+        <details><summary>Where can I see the available features?</summary><p>Open the mini-app dashboard. The visible sections include deposits, withdrawals, investment, trading, transactions, tasks, team and profile.</p></details>
+        <details><summary>What do the VIP amounts mean?</summary><p>The amounts shown here are copied from the VIP selection screen. Confirm the exact meaning, eligibility, benefits and conditions inside the app before choosing a level.</p></details>
+        <details><summary>Are returns guaranteed?</summary><p>No return is promised on this website. Financial activity involves risk. Review the platform's complete terms and consider the possibility of losing money before participating.</p></details>
+        <details><summary>Where can I find updates?</summary><p>Use the ROPTIMUS community link provided on this page for community updates.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <span class="eyebrow">CONNECT WITH ROPTIMUS</span>
+        <h2>Explore the platform on Telegram.</h2>
+        <p>Visit the official bot to see the current dashboard, available features and applicable terms. Join the community for updates.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-primary" href="https://t.me/RoptimusSSLBot" target="_blank" rel="noopener">Open ROPTIMUS Bot ↗</a>
+          <a class="btn btn-outline" href="https://t.me/+3pRtVRtD4m5lMDdk" target="_blank" rel="noopener">Join Community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row"><strong class="brand">ROPTIMUS</strong><div class="footer-links"><a href="#about">About</a><a href="#features">Platform</a><a href="#vip">VIP Levels</a><a href="https://t.me/RoptimusSSLBot" target="_blank" rel="noopener">Telegram</a></div></div>
+    <p class="disclaimer">Important: This website is an informational overview of interface elements visible in the ROPTIMUS Telegram mini-app. It does not verify or guarantee the platform's operations, financial performance, safety, regulatory status or any stated results. Investment and trading involve risk, including possible loss of capital. Review all official terms, fees, eligibility requirements and risks independently before depositing or participating. No financial outcome or return is guaranteed.</p>
+    <p>© 2026 ROPTIMUS. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navlinks = document.getElementById('navlinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navlinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navlinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+</body>
+</html>
 
